@@ -28,7 +28,7 @@ async def extract_data(request: ExtractionRequest):
                 },
                 {"role": "user", "content": request.description}
             ],
-            model="llama3-8b-8192",
+            model="llama-3.1-8b-instant",
             response_format={"type": "json_object"}
         )
         return {"success": True, "data": chat_completion.choices[0].message.content}
